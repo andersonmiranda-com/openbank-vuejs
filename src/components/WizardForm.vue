@@ -90,7 +90,7 @@
                 required
                 class="form-control"
                 :class="formHasError('pass') ? 'is-invalid' : ''"
-                placeholder="Password"
+                :placeholder="t('Password')"
                 v-model="pass"
                 onChange="{handleInputChange}"
               />
@@ -109,7 +109,7 @@
                 required
                 class="form-control"
                 :class="formHasError('repass') ? 'is-invalid' : ''"
-                placeholder="Confirm password"
+                :placeholder="t('Confirm password')"
                 v-model="repass"
                 onChange="{handleInputChange}"
               />
@@ -138,7 +138,7 @@
               required
               class="form-control"
               :class="formHasError('hint') ? 'is-invalid' : ''"
-              placeholder="Hint"
+              :placeholder="t('Hint')"
               onChange="{handleInputChange}"
             />
             <small :class="formHasError('hint') ? 'text-danger' : 'd-none'">
