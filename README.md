@@ -1,24 +1,22 @@
-# openbank-vue
+## Openbank-vuejs
 
-## Project setup
-```
-yarn install
-```
+This is the VueJS version of a 3 steps wizard with form validation, backend simulation and translation to EN/ES.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### Online Demo
 
-### Compiles and minifies for production
-```
-yarn build
-```
+[https://openbank-vuejs.herokuapp.com/](https://openbank-vuejs.herokuapp.com/)
 
-### Lints and fixes files
-```
-yarn lint
-```
+Instructions:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### `yar install`
+
+Installs all dependencies.
+
+### `yarn serve`
+
+Compiles and hot-reloads for development.<br>
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+
+### `yarn build`
+
+Compiles and minifies the app to production.
