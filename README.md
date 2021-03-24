@@ -8,7 +8,7 @@ This is the VueJS version of a 3 steps wizard with form validation, backend simu
 
 Instructions:
 
-### `yar install`
+### `yarn install`
 
 Installs all dependencies.
 
