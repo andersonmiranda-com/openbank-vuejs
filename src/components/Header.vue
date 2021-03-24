@@ -19,12 +19,12 @@
         <div className="collapse navbar-collapse" id="collapsibleNavId">
           <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick="">
+              <a className="nav-link" href="#" @click="changeLanguage('en')">
                 EN
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick="">
+              <a className="nav-link" href="#" @click="changeLanguage('es')">
                 ES
               </a>
             </li>
@@ -37,8 +37,11 @@
 
 <script>
 import "../styles/header.scss";
-
 export default {
-  name: "header",
+  methods: {
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+    },
+  },
 };
 </script>
