@@ -4,18 +4,23 @@
       <Stepper :step="step" />
 
       <section v-if="step === 0">
-        <h2 class="section-heading">{t("Welcome!")}</h2>
-        <p>{t('Thank you for choosing "Cuenta Corriente OpenClose".')}</p>
+        <h2 class="section-heading">{{ t("Welcome!") }}</h2>
+        <p>{{ t('Thank you for choosing "Cuenta Corriente OpenClose".') }}</p>
 
-        <p>{t("Your account is almost ready to be used.")}</p>
+        <p>{{ t("Your account is almost ready to be used.") }}</p>
 
         <p>
-          {t( "In the next steps, we will guide you to complete your account
-          creation by setting up your password." )}
+          {{
+            t(
+              "In the next steps, we will guide you to complete your account creation by setting up your password."
+            )
+          }}
         </p>
 
         <p>
-          {t('To start, please agree with the terms and click "Next" button.')}
+          {{
+            t('To start, please agree with the terms and click "Next" button.')
+          }}
         </p>
 
         <br />
@@ -32,8 +37,13 @@
 
             <label htmlFor="consent" class="form-check-label text-small">
               <small>
-                {t( "I am of legal age and I accept that my data be treated
-                according to the" )} <a href="#"> {t("privacy police")}</a>.
+                {{
+                  t(
+                    "I am of legal age and I accept that my data be treated according to the"
+                  )
+                }}
+                <a href="#"> {{ t("privacy police") }}</a
+                >.
               </small>
             </label>
           </form>
@@ -48,27 +58,30 @@
               @click="nextStep"
               :disabled="notConsent"
             >
-              {t("Next")} <BIconChevronRight />
+              {{ t("Next") }} <BIconChevronRight />
             </button>
           </div>
         </div>
       </section>
 
       <section v-else-if="step === 1">
-        <h2 class="section-heading">{t("Password setup")}</h2>
+        <h2 class="section-heading">{{ t("Password setup") }}</h2>
 
         <p>
-          {t("First, you need to set up your password")}: <br />
+          {{ t("First, you need to set up your password") }}: <br />
           <small>
-            {t( "(It must contains from 8 to 24 characters and at least 1
-            capital letter and 1 number ask the set up your password)" )}
+            {{
+              t(
+                "(It must contains from 8 to 24 characters and at least 1 capital letter and 1 number ask the set up your password)"
+              )
+            }}
           </small>
         </p>
         <form>
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label htmlFor="pass" class="sr-only">
-                {t("Password")}
+                {{ t("Password") }}
               </label>
               <input
                 type="password"
@@ -82,12 +95,12 @@
                 onChange="{handleInputChange}"
               />
               <small :class="formHasError('pass') ? 'text-danger' : 'd-none'">
-                {t("Invalid password")} {{ pass }}
+                {{ t("Invalid password") }} {{ pass }}
               </small>
             </div>
             <div class="col-md-6">
               <label htmlFor="repass" class="sr-only">
-                {t("Confirm password")}
+                {{ t("Confirm password") }}
               </label>
               <input
                 type="password"
@@ -101,19 +114,22 @@
                 onChange="{handleInputChange}"
               />
               <small :class="formHasError('repass') ? 'text-danger' : 'd-none'">
-                {t("Passwords does not match")}
+                {{ t("Passwords does not match") }}
               </small>
             </div>
           </div>
 
           <p>
-            {t("You can also create a hint to help you remember your
-            password")}:
+            {{
+              t(
+                "You can also create a hint to help you remember your password"
+              )
+            }}:
           </p>
 
           <div class="form-group">
             <label htmlFor="hint" class="sr-only">
-              {t("Hint")}
+              {{ t("Hint") }}
             </label>
             <input
               type="text"
@@ -126,7 +142,7 @@
               onChange="{handleInputChange}"
             />
             <small :class="formHasError('hint') ? 'text-danger' : 'd-none'">
-              {t("Hint too long")}
+              {{ t("Hint too long") }}
             </small>
           </div>
         </form>
@@ -138,7 +154,7 @@
               @click="previousStep"
             >
               <BIconChevronLeft />
-              {t("Previous")}
+              {{ t("Previous") }}
             </button>
           </div>
 
@@ -155,7 +171,7 @@
                 v-if="formSending"
               ></div>
 
-              {t("Next")} <BIconChevronRight />
+              {{ t("Next") }} <BIconChevronRight />
             </button>
           </div>
         </div>
@@ -164,20 +180,20 @@
       <section v-else-if="step === 2">
         <div v-if="formSuccess">
           <h2 class="section-heading">
-            <BIconCheckCircle class="successIcon" /> {t("Congratulations!")}
+            <BIconCheckCircle class="successIcon" /> {{ t("Congratulations!") }}
           </h2>
-          <p>{t("Your password was saved successfully")}.</p>
-          <p>{t("You can start to use your account now")}.</p>
+          <p>{{ t("Your password was saved successfully") }}.</p>
+          <p>{{ t("You can start to use your account now") }}.</p>
           <div class="row mt-5">
             <div class="col-6">
               <button class="btn btn-sm btn-light float-left" @click="restart">
                 <BIconChevronLeft />
-                {t("Restart")}
+                {{ t("Restart") }}
               </button>
             </div>
             <div class="col-6">
               <button class="btn btn-sm btn-secondary float-right">
-                {t("Access my account")}
+                {{ t("Access my account") }}
                 <BIconChevronRight />
               </button>
             </div>
@@ -186,11 +202,14 @@
 
         <div v-if="!formSuccess">
           <h2 class="section-heading">
-            <BIconExclamationDiamond class="errorIcon" />{" "} {t("An error was
-            occurred")} :(
+            <BIconExclamationDiamond class="errorIcon" />{" "}
+            {{ t("An error was occurred") }}
+            :(
           </h2>
           <p>
-            {t("Was not possible save your password. Please try agian later.")}
+            {{
+              t("Was not possible save your password. Please try agian later.")
+            }}
           </p>
           <div class="row mt-5">
             <div class="col-6">
@@ -199,7 +218,7 @@
                 @click="restart"
               >
                 <BIconChevronLeft />
-                {t("Try again")}
+                {{ t("Try again") }}
               </button>
             </div>
           </div>
@@ -210,6 +229,7 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 import "../styles/wizard_form.scss";
 import { submitForm } from "../services/api";
 import {
@@ -229,6 +249,10 @@ export default {
     BIconChevronLeft,
     BIconCheckCircle,
     BIconExclamationDiamond,
+  },
+  setup() {
+    const { t } = useI18n();
+    return { t };
   },
   data() {
     return {
