@@ -37,7 +37,13 @@
 
 <script>
 import "../styles/header.scss";
+import { useI18n } from "vue-i18n";
 export default {
+  setup() {
+    const { t, x } = useI18n();
+    console.log(x, t);
+    return { t };
+  },
   methods: {
     changeLanguage(lang) {
       this.$i18n.locale = lang;
