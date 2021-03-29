@@ -92,7 +92,6 @@
                 :class="formHasError('pass') ? 'is-invalid' : ''"
                 :placeholder="t('Password')"
                 v-model="pass"
-                onChange="{handleInputChange}"
               />
               <small :class="formHasError('pass') ? 'text-danger' : 'd-none'">
                 {{ t("Invalid password") }} {{ pass }}
@@ -111,7 +110,6 @@
                 :class="formHasError('repass') ? 'is-invalid' : ''"
                 :placeholder="t('Confirm password')"
                 v-model="repass"
-                onChange="{handleInputChange}"
               />
               <small :class="formHasError('repass') ? 'text-danger' : 'd-none'">
                 {{ t("Passwords does not match") }}
@@ -139,7 +137,6 @@
               class="form-control"
               :class="formHasError('hint') ? 'is-invalid' : ''"
               :placeholder="t('Hint')"
-              onChange="{handleInputChange}"
             />
             <small :class="formHasError('hint') ? 'text-danger' : 'd-none'">
               {{ t("Hint too long") }}
